@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Intenção</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstraptheme.min.css}"
+	rel="stylesheet" />
+
+<style>
+.logo-container {
+	background-color: #000000;
+	color: #fff;
+}
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="w-auto p-3 mt-3 logo-container">Intenção e
+			financiamento</div>
+		<div>
+			<h1 class="display-6">Intenções</h1>
+		</div>
+		<form method="POST" th:object="${produto}"
+			th:action="@{/salvar-produto}">
+
+			<div class="form-row">
+				<div>
+					<input type="hidden" th:field="*{id}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome"> Cliente:</label> <input type="text"
+						class="form-control" placeholder="Nome do cliente"
+						th:field="*{nome}" required="required"> <label for="nome"> E-mail:</label> <input
+						type="text" class="form-control" placeholder="Endreço de Email"
+						th:field="*{nome}" required="required"> <label for="nome">RG:</label> <input
+						type="text" class="form-control" placeholder="RG" required="required"> <label
+						for="number">CPF:</label> <input type="text" class="form-control"
+						placeholder="CPF" required="required"> <label for="number">Celular:</label> <input
+						type="text" class="form-control" placeholder="CPF" required="required">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Data de nascimento:</label> <input type="date"
+						class="form-control" placeholder="" th:field="*{sku}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label type="text" for="nome">Endereço</label> <input type="text"
+						class="form-control" placeholder="Endereço" required="required"> <label
+						type="text" for="nome">Nº</label> <input type="number"
+						class="form-control" placeholder="Numero" required="required"> <label
+						type="text" for="nome">Cidade</label> <input type="text"
+						class="form-control" placeholder="Cidade" required="required"> <label
+						type="text" for="nome">Estado</label> <input type="text"
+						class="form-control" placeholder="UF" required="required"> <label
+						type="text" for="nome">Tipo finaciamento</label> <input type="text"
+						class="form-control" placeholder="Tipo Financiamento" required="required">
+
+
+				</div>
+
+
+				<div class="form-group col-md-2 mt-3">
+					<label for="nome">Preco:</label> <input type="number"
+						class="form-control" placeholder="Preço do produto"
+						th:field="*{preco}">
+				</div>
+			</div>
+
+			<div>
+				<button type="submit" class="btn btn-light  mt-3">Salvar</button>
+			</div>
+		</form>
+	</div>
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
